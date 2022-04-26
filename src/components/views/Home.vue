@@ -13,7 +13,7 @@
                     </div>
                 </el-card>
             </el-col>
-                <el-col :span="6">
+                <!-- <el-col :span="6">
                     <el-card shadow="always" style="text-align:center">
                         <div>
                             <a href="https://github.com/PowerJob/PowerJob" target="_blank">{{$t('message.githubURL')}}</a>
@@ -22,7 +22,7 @@
                             <a href="https://github.com/PowerJob/PowerJob/wiki" target="_blank">{{$t('message.docURL')}}</a>
                         </div>
                     </el-card>
-                </el-col>
+                </el-col> -->
             <el-col :span="6">
                 <el-card shadow="always">
                     <div>

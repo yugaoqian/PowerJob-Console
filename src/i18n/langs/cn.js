@@ -23,7 +23,7 @@ const cn = {
         'more': '| 更多',
 
         // 欢迎界面
-        'appRegister': '执行应用注册',
+        'appRegister': '应用注册',
         'userRegister': '报警用户录入',
         'appNameInputPLH': '请输入应用名称',
         'appName': '应用名称',
@@ -33,8 +33,8 @@ const cn = {
         'phone': '手机号',
         'email': '邮箱地址',
         'webhook': 'WebHook',
-        'welcomeTitle': '欢迎使用 PowerJob!',
-        'login': '登陆',
+        'welcomeTitle': '欢迎使用',
+        'login': '登录',
         'logout': '退出',
         'changeAppInfo': '修改应用信息',
         'newPassword': '新密码',
