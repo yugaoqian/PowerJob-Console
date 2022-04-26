@@ -4,15 +4,19 @@ import ElementUI from 'element-ui'
 import { Message } from 'element-ui';
 import './styles.scss'
 import './plugins/element.js'
-import i18n from './i18n/i18n'
+import i18n from './i18n/i18n';
 
-
+// 引入表单校验
+import rules from "./utils/rules";
 // axios 负责统一拦截处理 ResultDTO，fly 负责处理不需要拦截的请求
 import axios from 'axios';
 import flyio from 'flyio';
 import router from "./router";
 import store from "./store";
 import common from "./common";
+
+// 引入jsencrypt
+import JSEncrypt from 'jsencrypt/bin/jsencrypt.min.js';
 
 Vue.use(ElementUI);
 // let baseURL = "http://139.224.83.134:7700";
@@ -76,5 +80,15 @@ axios.interceptors.response.use((response) => {
   Message.error(error.toString());
   return Promise.reject(error);
 });
+
+Vue.prototype.$getRsaCode = function(obj) {
+	let encrypt = new JSEncrypt();
+	var publicKey = 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCGgI1dx/sirWCSkP2Cgc837HJU68oY/7MTN8xMN71ynOf89xiUxAJM5HYNge2XZBNKj0qQz9VTItaseOzTdm9BsVopjEZjEJs93Krtv3hfkbvfj0VkEsX808w4JaAlmvGPlVi2lhueRLdcWlTpjw/J4cYX+qleN+O4q/z1fnyZeQIDAQAB';
+	encrypt.setPublicKey(publicKey);
+	return encrypt.encrypt(obj);
+};
+
+// 定义表单校验全局调用
+Vue.prototype.$rules = rules;
 
 export default baseURL;
